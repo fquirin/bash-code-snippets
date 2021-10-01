@@ -64,6 +64,15 @@ while true; do
 done
 ```
 
+## Example: Count something and act
+
+```
+sound_card_count=$(aplay -l | grep "^card" | wc -l)
+if [ $sound_card_count -gt 0 ]; then
+	echo "Found $sound_card_count cards"
+fi
+```
+
 ## Example: Define and use function
 
 ```
