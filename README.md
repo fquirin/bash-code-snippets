@@ -63,3 +63,17 @@ while true; do
 	option=""
 done
 ```
+
+## Example: Define and use function
+
+```
+# define:
+is_armv7l() {
+	if [ -n "$(uname -m | grep 'armv7l')" ]; then return 0;
+	else return 1; fi
+}
+# use:
+if is_armv7l; then
+	echo "System is ARMv7l"
+fi
+```
